@@ -13,7 +13,7 @@ namespace swagger.Controllers
     /// </summary>
     [Route("api/v1/[controller]")]
     [ApiController]
-    [ApiExplorerSettings(GroupName = "V1")]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class SwaggerController : ControllerBase
     {
         /// <summary>

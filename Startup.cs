@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace swagger
 {
@@ -28,6 +30,7 @@ namespace swagger
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+      
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger API V1", Version = "v1" });
@@ -47,6 +50,7 @@ namespace swagger
                 app.UseSwaggerUI(c =>
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger API V1");
+                    c.SwaggerEndpoint("/swagger/v2/swagger.json", "Swagger API V2");
                 });
                 app.UseDeveloperExceptionPage();
             }
