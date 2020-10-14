@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>swagger</name>
+        <name>Swagger</name>
     </assembly>
     <members>
         <member name="T:swagger.Controllers.Swagger2Controller">
@@ -60,6 +60,18 @@
             swagger name
             </summary>
             <example>Test</example> 
+        </member>
+        <member name="T:swagger.Controllers.UserController">
+            <summary>
+            User Controller
+            </summary>
+        </member>
+        <member name="M:swagger.Controllers.UserController.GetUser(System.Int32)">
+            <summary>
+            Get User
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>
